@@ -1,6 +1,6 @@
 class Api::V1::CoursesController < ApplicationController
   def show
-    @test = 'hello'
-    render json: @test
+    @course = Course.find(params[:id])
+    render json: @course
   end
 end
