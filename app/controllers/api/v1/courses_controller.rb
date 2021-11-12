@@ -1,6 +1,6 @@
 class Api::V1::CoursesController < ApplicationController
   def index
-    @tests = Test.all
+    @tests = ['hello', 'hi', 'how are you?']
     render json: @tests
   end
 
