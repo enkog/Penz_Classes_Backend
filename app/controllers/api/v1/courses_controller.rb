@@ -3,6 +3,7 @@ class Api::V1::CoursesController < ApplicationController
     @tests = Test.all
     render json: @tests
   end
+
   def show
     @test = 'hello'
     render json: @test
