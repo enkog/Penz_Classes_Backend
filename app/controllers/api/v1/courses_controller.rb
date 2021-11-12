@@ -1,6 +1,6 @@
 class Api::V1::CoursesController < ApplicationController
-  def show
-    @test = 'hello'
-    render json: @test
+  def index
+    @courses = Course.all
+    render json: @courses
   end
 end
