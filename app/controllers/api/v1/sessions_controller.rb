@@ -7,6 +7,7 @@ class Api::V1::SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       raise AuthenticateError unless user
+
       render json: UserSerializer.new(user).as_json, status: :created
     else
       render json: { error: 'User does not exist' }, status: :unauthorized
@@ -15,7 +16,7 @@ class Api::V1::SessionsController < ApplicationController
 
   def destroy
     reset_session
-    render json: {message: 'You have logged out succesfully'}
+    render json: { message: 'You have logged out succesfully' }
   end
 
   private

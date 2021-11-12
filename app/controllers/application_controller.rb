@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
 
   def payload
     auth_header = request.headers['Authorization']
-    token = auth_header.split(' ').last
+    token = auth_header.split.last
     AuthenticationTokenService.decode(token)
   rescue StandardError
     nil
@@ -26,4 +26,3 @@ class ApplicationController < ActionController::API
     render json: { error: 'Please login first' }, status: :unauthorized
   end
 end
-    
