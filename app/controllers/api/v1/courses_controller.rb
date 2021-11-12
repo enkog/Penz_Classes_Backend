@@ -1,7 +1,6 @@
 class Api::V1::CoursesController < ApplicationController
   def index
-    @courses = Course.all
-    render json: @courses
+    render json: Course.all
   end
 
   def show
@@ -25,8 +24,9 @@ class Api::V1::CoursesController < ApplicationController
   end
 
   def destroy
-    @course = course.find(params[:id])
-    @course.destroy
+    Course.find(params[:id]).destroy!
+
+    head :no_content
   end
 
   private
