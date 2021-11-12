@@ -8,8 +8,6 @@
 Course.destroy_all 
 
 5.times do |count| 
-    Course.create(title: Faker::Educator.subject, 
-        description: Faker::Lorem.characters, 
-        instructor_name: Faker::Name.unique.name, 
-        image: Faker::LoremFlickr.image) 
-end 
+  Course.create(title: Faker::Educator.subject, description: Faker::Lorem.characters, instructor_name: Faker::Name.unique.name, image: Faker::LoremFlickr.image) 
+end
+
