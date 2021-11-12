@@ -3,11 +3,12 @@ class Api::V1::CoursesController < ApplicationController
     @courses = Course.all
     render json: @courses
   end
+
   def show
     @course = Course.find(params[:id])
     render json: @course
   end
- 
+
   def create
     @course = Course.new(course_params)
     if @course.save
@@ -22,7 +23,7 @@ class Api::V1::CoursesController < ApplicationController
              status: :bad_request
     end
   end
-  
+
   def destroy
     @course = course.find(params[:id])
     @course.destroy
