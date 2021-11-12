@@ -1,12 +1,11 @@
 class Api::V1::CoursesController < ApplicationController
+  def index
+    render json: Course.all
+  end
+
   def show
     @course = Course.find(params[:id])
     render json: @course
-  end
-
-  def index
-    @courses = Course.all
-    render json: @courses
   end
 
   def create
@@ -22,6 +21,12 @@ class Api::V1::CoursesController < ApplicationController
       },
              status: :bad_request
     end
+  end
+
+  def destroy
+    Course.find(params[:id]).destroy!
+
+    head :no_content
   end
 
   private
