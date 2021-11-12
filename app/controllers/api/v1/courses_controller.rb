@@ -3,7 +3,7 @@ class Api::V1::CoursesController < ApplicationController
     @courses = Course.all
     render json: @courses
   end
-  
+
   def destroy
     @course = course.find(params[:id])
     @course.destroy
