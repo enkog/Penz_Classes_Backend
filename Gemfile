@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'rack-cors'
-gem 'rswag', '~> 2.4'
 gem 'rspec'
+gem 'rswag', '~> 2.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'wdm', '>= 0.1.0'
 
