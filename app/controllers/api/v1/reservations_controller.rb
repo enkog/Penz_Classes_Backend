@@ -2,6 +2,7 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     render json: Reservation.all
   end
+
   def create
     @reservation = Reservation.new(reservations_params)
     if @reservation.save
