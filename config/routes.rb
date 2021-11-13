@@ -4,9 +4,9 @@ Rails.application.routes.draw do
       resources :users, only: :index
       resources :courses, only: [:index, :show, :create, :destroy]
       resources :reservations, only: [:index, :show, :create, :destroy]
+      post 'signup', to: 'users#create'
       post 'login', to: 'session#create'
       delete 'logout', to: 'session#destroy'
-      post 'signup', to: 'users#create'
     end 
   end
 end
