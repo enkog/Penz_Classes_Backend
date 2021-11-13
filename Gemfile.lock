@@ -80,7 +80,6 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.10.0)
     ffi (1.15.4)
-    ffi (1.15.4-x64-mingw32)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -106,15 +105,10 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
-    nokogiri (1.12.5-x64-mingw32)
-      racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
-      racc (~> 1.4)
     parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pg (1.2.3)
-    pg (1.2.3-x64-mingw32)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -206,8 +200,6 @@ GEM
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.5)
-      tzinfo (>= 1.0.0)
     unicode-display_width (2.1.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
@@ -216,14 +208,12 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
-  jwt
   faker!
+  jwt
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -234,9 +224,10 @@ DEPENDENCIES
   rubocop (>= 1.0, < 2.0)
   spring
   tzinfo-data
+  wdm (>= 0.1.0)
 
 RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.2.31
+   2.1.4
