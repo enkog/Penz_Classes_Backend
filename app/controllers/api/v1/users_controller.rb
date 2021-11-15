@@ -6,9 +6,8 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    session[:user_id] = user.id
-
     if user.save
+      log_in user
       render json: UserSerializer.new(user).as_json, status: :created
     else
       render json: { error: user.errors.full_messages.first }, status: :unprocessable_entity

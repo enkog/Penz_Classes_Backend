@@ -5,8 +5,6 @@ class UserSerializer
 
   def as_json
     {
-      id: user.id,
-      username: user.username,
       token: AuthenticationTokenService.call(user.id)
     }
   end
