@@ -21,8 +21,11 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation.destroy
-    head :no_content
+    if @reservation.destroy
+      render json: { success: 'Reservation was deleted successfully' }
+    else
+      render json: { error: 'Reservation deletion was unsuccessful' }
+    end
   end
 
   private
