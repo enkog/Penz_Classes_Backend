@@ -6,11 +6,11 @@ ruby '2.7.2'
 gem 'cloudinary'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'figaro'
+gem 'jwt'
 gem 'rspec'
 gem 'rswag', '~> 2.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
-# gem 'wdm', '>= 0.1.0'
-
+gem 'wdm', '>= 0.1.0', platforms: %i[mingw mswin x64_mingw jruby]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
