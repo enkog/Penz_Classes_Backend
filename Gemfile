@@ -5,6 +5,7 @@ ruby '2.7.2'
 
 gem 'cloudinary'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'figaro'
 gem 'rspec'
 gem 'rswag', '~> 2.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
