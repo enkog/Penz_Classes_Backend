@@ -2,7 +2,16 @@ class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: [:destroy]
 
   def index
-    render json: Reservation.all
+    @reservations = Reservation.all
+    @user_reservations = @reservations.map do |reservation|
+      {
+        id: reservation.id,
+        username: User.find(reservation.user_id).username,
+        course: Course.find(reservation.course_id).title,
+        start_date: reservation.start_date,
+      }
+    end
+    render json: @user_reservations
   end
 
   def create
