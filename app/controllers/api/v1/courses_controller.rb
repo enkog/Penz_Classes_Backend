@@ -25,8 +25,7 @@ class Api::V1::CoursesController < ApplicationController
 
   def destroy
     Course.find(params[:id]).destroy!
-
-    head :no_content
+    render json: Course.all
   end
 
   private

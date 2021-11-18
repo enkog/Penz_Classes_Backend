@@ -22,7 +22,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def destroy
     if @reservation.destroy
-      render json: { success: 'Reservation was deleted successfully' }
+      render json: Reservation.all
     else
       render json: { error: 'Reservation deletion was unsuccessful' }
     end
