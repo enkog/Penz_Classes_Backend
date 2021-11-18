@@ -5,7 +5,7 @@ class Api::V1::SessionsController < ApplicationController
   def create
     if user
       log_in user
-      render json: { message: 'You are successfully logged in' }, status: :created
+      render json: UserSerializer.new(user).as_json, status: :created
     else
       render json: { error: 'User does not exist' }, status: :unauthorized
     end
