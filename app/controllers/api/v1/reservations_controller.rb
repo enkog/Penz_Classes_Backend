@@ -8,7 +8,7 @@ class Api::V1::ReservationsController < ApplicationController
         id: reservation.id,
         username: User.find(reservation.user_id).username,
         course: Course.find(reservation.course_id).title,
-        start_date: reservation.start_date,
+        start_date: reservation.start_date
       }
     end
     render json: @user_reservations
