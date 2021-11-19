@@ -32,6 +32,6 @@ class Api::V1::CoursesController < ApplicationController
 
   def course_params
     image = Cloudinary::Uploader.upload(params[:image])
-    params.require(:course).permit(:title, :description, :instructor_name).merge(image: image['url'])
+    params.permit(:title, :description, :instructor_name).merge(image: image['url'])
   end
 end
