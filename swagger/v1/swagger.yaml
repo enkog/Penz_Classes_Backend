@@ -6,12 +6,53 @@ info:
 paths:
   "/api/v1/courses":
     get:
-      summary: list courses
+      summary: List all courses
       tags:
       - Courses
       responses:
         '200':
-          description: OK
+          description: success
+  "/api/v1/courses/{id}":
+    get:
+      summary: Retrieves a course
+      tags:
+      - Courses
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  instructor_name:
+                    type: string
+                  image:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                required:
+                - id
+                - title
+                - description
+                - instructor_name
+                - image
+        '404':
+          description: not_found
 servers:
 - url: http://{defaultHost}
   variables:
