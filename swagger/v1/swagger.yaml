@@ -97,6 +97,33 @@ paths:
           description: success
         '404':
           description: not_found
+  "/api/v1/reservations":
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: created
+        '400':
+          description: bad_request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                course_id:
+                  type: integer
+                start_date:
+                  type: date
+              required:
+              - user_id
+              - course_id
+              - start_date
 servers:
 - url: http://{defaultHost}
   variables:
