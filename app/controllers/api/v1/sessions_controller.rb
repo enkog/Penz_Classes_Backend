@@ -19,7 +19,7 @@ class Api::V1::SessionsController < ApplicationController
   private
 
   def user
-    @user ||= User.find_by(username: params[:session][:username])
+    @user ||= User.find_by(username: params[:session][:username].downcase)
   end
 
   def parameter_missing(error)
