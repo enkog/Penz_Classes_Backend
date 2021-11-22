@@ -45,4 +45,39 @@ describe 'Courses API' do
       end
     end
   end
+
+  path '/api/v1/courses' do
+
+    post 'Creates a course' do
+      tags 'Courses'
+      consumes 'application/json'
+      parameter name: :course, in: :body, schema: {
+        type: :object,
+        properties: {
+          title: { type: :string },
+          description: { type: :string },
+          instructor_name: { type: :string },
+          image: { type: :string }
+        },
+        required: [ 'title', 'description', 'instructor_name', 'image' ]
+      }
+
+      response '201', :created do
+        let(:course) {
+          {
+            title: "Forensic Data",
+            description: "A forensics data course",
+            instructor_name: "PENZ CPA",
+            image: "https://loremflickr.com/300/300"
+          }
+        }
+        run_test!
+      end
+
+      response '500', :internal_server_error do
+        let(:course) { { title: 'test' } }
+        run_test!
+      end
+    end
+  end
 end

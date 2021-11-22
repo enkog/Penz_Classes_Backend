@@ -12,6 +12,35 @@ paths:
       responses:
         '200':
           description: success
+    post:
+      summary: Creates a course
+      tags:
+      - Courses
+      parameters: []
+      responses:
+        '201':
+          description: created
+        '500':
+          description: internal_server_error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                instructor_name:
+                  type: string
+                image:
+                  type: string
+              required:
+              - title
+              - description
+              - instructor_name
+              - image
   "/api/v1/courses/{id}":
     get:
       summary: Retrieves a course
