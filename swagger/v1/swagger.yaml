@@ -147,6 +147,70 @@ paths:
           description: success
         '404':
           description: not_found
+  "/api/v1/users":
+    get:
+      summary: List all users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: success
+  "/api/v1/signup":
+    post:
+      summary: Register a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: created
+        '400':
+          description: bad_request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+  "/api/v1/login":
+    post:
+      summary: Login a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: created
+        '500':
+          description: internal_server_error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+  "/api/v1/logout":
+    delete:
+      summary: Logout a user
+      tags:
+      - Users
+      parameters:
+      - name: user
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success
 servers:
 - url: http://{defaultHost}
   variables:

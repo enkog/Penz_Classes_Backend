@@ -1,12 +1,10 @@
 require 'swagger_helper'
 
 describe 'Courses API' do
-
   path '/api/v1/courses' do
-
     get 'List all courses' do
       tags 'Courses'
-      produces 'application/json', 'application/xml'
+      produces 'application/json'
 
       response '200', :success do
         let!(:course) { create(:course) }
@@ -25,18 +23,18 @@ describe 'Courses API' do
           instructor_name: { type: :string },
           image: { type: :string }
         },
-        required: [ 'title', 'description', 'instructor_name', 'image' ]
+        required: %w[title description instructor_name image]
       }
 
       response '201', :created do
-        let(:course) {
+        let(:course) do
           {
-            title: "Forensic Data",
-            description: "A forensics data course",
-            instructor_name: "PENZ CPA",
-            image: "https://loremflickr.com/300/300"
+            title: 'Forensic Data',
+            description: 'A forensics data course',
+            instructor_name: 'PENZ CPA',
+            image: 'https://loremflickr.com/300/300'
           }
-        }
+        end
         run_test!
       end
 
@@ -48,7 +46,6 @@ describe 'Courses API' do
   end
 
   path '/api/v1/courses/{id}' do
-
     get 'Retrieves a course' do
       tags 'Courses'
       produces 'application/json'
@@ -56,16 +53,16 @@ describe 'Courses API' do
 
       response '200', :success do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            title: { type: :string },
-            description: { type: :string },
-            instructor_name: { type: :string },
-            image: { type: :string },
-            created_at: { type: :string },
-            updated_at: { type: :string }
-          },
-          required: [ 'id', 'title', 'description', 'instructor_name', 'image' ]
+               properties: {
+                 id: { type: :integer },
+                 title: { type: :string },
+                 description: { type: :string },
+                 instructor_name: { type: :string },
+                 image: { type: :string },
+                 created_at: { type: :string },
+                 updated_at: { type: :string }
+               },
+               required: %w[id title description instructor_name image]
 
         let(:id) { Course.create(:course).id }
         run_test!

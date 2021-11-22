@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
 describe 'Reservations API' do
-
   path '/api/v1/reservations' do
-
     get 'List all reservations' do
       tags 'Reservations'
       produces 'application/json'
@@ -13,7 +11,7 @@ describe 'Reservations API' do
         run_test!
       end
     end
-  
+
     post 'Creates a reservation' do
       tags 'Reservations'
       consumes 'application/json'
@@ -24,17 +22,17 @@ describe 'Reservations API' do
           course_id: { type: :integer },
           start_date: { type: :date }
         },
-        required: [ 'user_id', 'course_id', 'start_date' ]
+        required: %w[user_id course_id start_date]
       }
 
       response '201', :created do
-        let(:reservation) {
+        let(:reservation) do
           {
             user_id: 15,
             course_id: 35,
             start_date: '2021-11-20'
           }
-        }
+        end
         run_test!
       end
 
@@ -44,9 +42,8 @@ describe 'Reservations API' do
       end
     end
   end
-  
-  path '/api/v1/reservations/{id}' do
 
+  path '/api/v1/reservations/{id}' do
     delete 'Delete reservation by id' do
       tags 'Reservations'
       parameter name: :id, in: :path, type: :integer
