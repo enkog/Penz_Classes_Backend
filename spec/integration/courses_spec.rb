@@ -13,6 +13,38 @@ describe 'Courses API' do
         run_test!
       end
     end
+
+    post 'Creates a course' do
+      tags 'Courses'
+      consumes 'application/json'
+      parameter name: :course, in: :body, schema: {
+        type: :object,
+        properties: {
+          title: { type: :string },
+          description: { type: :string },
+          instructor_name: { type: :string },
+          image: { type: :string }
+        },
+        required: [ 'title', 'description', 'instructor_name', 'image' ]
+      }
+
+      response '201', :created do
+        let(:course) {
+          {
+            title: "Forensic Data",
+            description: "A forensics data course",
+            instructor_name: "PENZ CPA",
+            image: "https://loremflickr.com/300/300"
+          }
+        }
+        run_test!
+      end
+
+      response '500', :internal_server_error do
+        let(:course) { { title: 'test' } }
+        run_test!
+      end
+    end
   end
 
   path '/api/v1/courses/{id}' do
@@ -44,38 +76,18 @@ describe 'Courses API' do
         run_test!
       end
     end
-  end
 
-  path '/api/v1/courses' do
-
-    post 'Creates a course' do
+    delete 'Delete course by id' do
       tags 'Courses'
-      consumes 'application/json'
-      parameter name: :course, in: :body, schema: {
-        type: :object,
-        properties: {
-          title: { type: :string },
-          description: { type: :string },
-          instructor_name: { type: :string },
-          image: { type: :string }
-        },
-        required: [ 'title', 'description', 'instructor_name', 'image' ]
-      }
+      parameter name: :id, in: :path, type: :integer
 
-      response '201', :created do
-        let(:course) {
-          {
-            title: "Forensic Data",
-            description: "A forensics data course",
-            instructor_name: "PENZ CPA",
-            image: "https://loremflickr.com/300/300"
-          }
-        }
+      response '200', :success do
+        let!(:id) { create(:course).id }
         run_test!
       end
 
-      response '500', :internal_server_error do
-        let(:course) { { title: 'test' } }
+      response '404', :not_found do
+        let!(:id) { 'Couldn\'t find Course with given id' }
         run_test!
       end
     end

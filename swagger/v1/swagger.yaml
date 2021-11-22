@@ -82,6 +82,21 @@ paths:
                 - image
         '404':
           description: not_found
+    delete:
+      summary: Delete course by id
+      tags:
+      - Courses
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success
+        '404':
+          description: not_found
 servers:
 - url: http://{defaultHost}
   variables:
