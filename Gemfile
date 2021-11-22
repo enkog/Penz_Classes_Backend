@@ -7,8 +7,6 @@ gem 'cloudinary'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'figaro'
 gem 'jwt'
-gem 'rspec'
-gem 'rswag', '~> 2.4'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'wdm', '>= 0.1.0', platforms: %i[mingw mswin x64_mingw jruby]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -36,6 +34,8 @@ gem 'rack-cors'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rswag', '~> 2.4'
+  gem 'rspec-rails'
 end
 
 group :development do
