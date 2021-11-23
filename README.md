@@ -1,6 +1,6 @@
 # PENZ Classes Backend
 > An online class app that allows users to see all available courses, reserve a spot in a class, see all reservations, add and delete courses. 
-This repository consists of Api end points for Courses, Reservations and is linked to a front end built with React.
+This repository consists of Api End points for Courses & Reservations and is linked to a front end built with React.
 Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_Classes_Frontend).
 
 ## Project Requirements
