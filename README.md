@@ -73,20 +73,20 @@ bundle install
 Setup database with:
 
 ```
-   rails db:create
-   rails db:migrate
+rails db:create
+rails db:migrate
 ```
 
 Get seeded data with:
 
 ```
-	rails db:seed
+rails db:seed
 ```
 
 If you are on Linux start the database service with:
 
 ```
-	sudo service postgresql start
+sudo service postgresql start
 ```
 
 ### Usage
@@ -94,7 +94,7 @@ If you are on Linux start the database service with:
 Start server with:
 
 ```
-    rails server
+rails server
 ```
 
 Open `http://localhost:3000/` in your browser.
