@@ -212,7 +212,7 @@ paths:
         '200':
           description: success
 servers:
-- url: http://{defaultHost}
+- url: https://{defaultHost}
   variables:
     defaultHost:
-      default: localhost:3000/
+      default: penz-classes-backend.herokuapp.com/
