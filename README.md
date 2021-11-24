@@ -3,6 +3,9 @@
 This repository consists of Api End points for Courses & Reservations and is linked to a front end built with React.
 Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_Classes_Frontend).
 
+  ## Deployment
+  [Visit the website](https://penz-classes.netlify.app/)
+  
 ## API deployment
 - [List of all users](https://penz-classes-backend.herokuapp.com/api/v1/users)
 - [List of all courses](https://penz-classes-backend.herokuapp.com/api/v1/courses)
