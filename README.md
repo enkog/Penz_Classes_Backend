@@ -8,6 +8,12 @@ Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_C
 [List of all courses](https://penz-classes-backend.herokuapp.com/api/v1/courses)
 [View the API documentation](https://penz-classes-backend.herokuapp.com/api-docs)
 
+## Kanban Board
+- Final number of team members is 4.
+- [Kanban Board link](https://github.com/enkog/Penz_Classes_Backend/projects/1)
+
+![Kanban Board](https://user-images.githubusercontent.com/46851023/141288854-34cb1902-4c16-498a-974f-cabff53309a2.png)
+
 ## Project Requirements
 
 - You should follow the layout of [the provided design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign). You should change only the titles, descriptions, and photos - in order to create a website about something other than motorcycles.
