@@ -3,6 +3,11 @@
 This repository consists of Api End points for Courses & Reservations and is linked to a front end built with React.
 Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_Classes_Frontend).
 
+## API deployment
+[List of all users](https://penz-classes-backend.herokuapp.com/api/v1/users)
+[List of all courses](https://penz-classes-backend.herokuapp.com/api/v1/courses)
+[View the API documentation](https://penz-classes-backend.herokuapp.com/api-docs)
+
 ## Project Requirements
 
 - You should follow the layout of [the provided design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign). You should change only the titles, descriptions, and photos - in order to create a website about something other than motorcycles.
