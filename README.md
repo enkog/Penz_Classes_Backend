@@ -104,11 +104,6 @@ rails server
 
 Open `http://localhost:3000/` in your browser.
 
-### Deployment
-
-> TBA
-[Visit the Website]()
-
 
 ### To view the API documentation
 
