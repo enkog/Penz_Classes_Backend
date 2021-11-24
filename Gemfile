@@ -8,6 +8,8 @@ gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'figaro'
 gem 'jwt'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rails_12factor'
+gem 'foreman'
 gem 'wdm', '>= 0.1.0', platforms: %i[mingw mswin x64_mingw jruby]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
