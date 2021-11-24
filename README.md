@@ -4,9 +4,9 @@ This repository consists of Api End points for Courses & Reservations and is lin
 Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_Classes_Frontend).
 
 ## API deployment
-[List of all users](https://penz-classes-backend.herokuapp.com/api/v1/users)
-[List of all courses](https://penz-classes-backend.herokuapp.com/api/v1/courses)
-[View the API documentation](https://penz-classes-backend.herokuapp.com/api-docs)
+- [List of all users](https://penz-classes-backend.herokuapp.com/api/v1/users)
+- [List of all courses](https://penz-classes-backend.herokuapp.com/api/v1/courses)
+- [View the API documentation](https://penz-classes-backend.herokuapp.com/api-docs)
 
 ## Kanban Board
 - Final number of team members is 4.
