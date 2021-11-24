@@ -53,10 +53,19 @@ Link to React repo [PENZ Classes Frontend](https://github.com/ZeenatLawal/Penz_C
 
 ### To get a local copy run the following steps:
 
-- Clone the repository with `git clone https://github.com/enkog/Penz_Classes_Backend`
+- Clone the repository with `git clone https://github.com/enkog/Penz_Classes_Backend.git`
 - Open the folder with your code editor
-- Run `npm install` to install all dependencies
+- Run `bundle install` to install all gems
+- Run `rails db:create` to create your database
+- Run `rails db:migrate` to setup the database
+- Run `rails db:seed` to get seeded data
+- If you are on Linux run `sudo service postgresql start` to start the database service
 - Run `rails s` and go to `http:localhost:3000/` to launch the server.
+
+
+### To view the API documentation
+
+- Go to [API DOCS](http://localhost:3000/api-docs/) to view API endpoints and test them
 
 ## Authors
 
